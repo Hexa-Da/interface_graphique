@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane fx:controller="com.example.interface_graphique.HelloController"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <center>
+        <Pane>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Canvas fx:id="mainCanvas"
+                    width="600" height="400" 
+                    onMousePressed="#onCanvasMousePressed"
+                    onMouseDragged="#onCanvasMouseDragged"
+                    styleClass="canvas"/>
+        </Pane>
+    </center>
+    
+    <bottom>
+        <VBox>
+            <Separator styleClass="separator"/>
+            <HBox alignment="CENTER">
+                <spacing>15</spacing>
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                <Button text="Clear"
+                        onAction="#clearImage"
+                        styleClass="action-button"/>
+            </HBox>
+        </VBox>
+    </bottom>
+    
+    <left>
+        <VBox>
+            <padding>
+                <Insets top="20" right="15" bottom="20" left="15"/>
+            </padding>
+            <Label text="Color Palette" styleClass="section-title"/>
+            <Separator styleClass="separator"/>
+            <spacing>10</spacing>
+            <VBox spacing="8">
+                <Button fx:id="redButton" 
+                        text="🔴 Red" 
+                        onAction="#selectRed"
+                        styleClass="color-button"/>
+                
+                <Button fx:id="greenButton" 
+                        text="🟢 Green" 
+                        onAction="#selectGreen"
+                        styleClass="color-button"/>
+                        
+                <Button fx:id="blueButton" 
+                        text="🔵 Blue" 
+                        onAction="#selectBlue"
+                        styleClass="color-button"/>
+                        
+                <Button fx:id="blackButton" 
+                        text="⚫ Black" 
+                        onAction="#selectBlack"
+                        styleClass="color-button"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+</BorderPane>
